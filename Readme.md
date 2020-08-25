@@ -11,13 +11,18 @@ This project aims to provide a very straight-forward example of setting up Priva
 
 ## Usage
 
-**1\. Ensure your AWS credentials are set up.**
+**1\. Ensure your AWS and MongoDB Atlas credentials are set up.**
 
 This can be done using environment variables:
 
 ``` bash
 $ export AWS_SECRET_ACCESS_KEY='your secret key'
 $ export AWS_ACCESS_KEY_ID='your key id'
+```
+
+```bash
+export MONGODB_ATLAS_PUBLIC_KEY="xxxx"
+export MONGODB_ATLAS_PRIVATE_KEY="xxxx"
 ```
 
 ... or the `~/.aws/credentials` file.
@@ -51,7 +56,7 @@ The security group in this configuration allows All Traffic access in Inbound an
 
 **4\. Execute the Terraform apply.**
 
-Now execute the plan to provision the AWS resources.
+Now execute the plan to provision the AWS and Atlas resources.
 
 ``` bash
 $ terraform apply
@@ -59,7 +64,7 @@ $ terraform apply
 
 **5\. Destroy the resources.**
 
-Once you are finished your testing, ensure you destroy the resources to avoid unnecessary AWS charges.
+Once you are finished your testing, ensure you destroy the resources to avoid unnecessary charges.
 
 ``` bash
 $ terraform destroy
