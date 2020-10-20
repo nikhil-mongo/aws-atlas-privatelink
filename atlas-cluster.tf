@@ -17,8 +17,8 @@ resource "mongodbatlas_cluster" "cluster-atlas" {
   provider_region_name        = var.atlas_region
 }
 output "atlasclusterstring" {
-    value = mongodbatlas_cluster.cluster-atlas.connection_strings
+  value = mongodbatlas_cluster.cluster-atlas.connection_strings
 }
 output "plstring" {
-    value = lookup(mongodbatlas_cluster.cluster-atlas.connection_strings[0].aws_private_link_srv, aws_vpc_endpoint.ptfe_service.id)
+  value = lookup(mongodbatlas_cluster.cluster-atlas.connection_strings[0].aws_private_link_srv, aws_vpc_endpoint.ptfe_service.id)
 }
